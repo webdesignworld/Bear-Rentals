@@ -9,12 +9,12 @@ import { FaGoogle } from "react-icons/fa";
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   const pathname = usePathname();
 
   return (
-    <nav className="bg-purple-500 border-b border-blue-500">
+    <nav className="bg-purple-500 border-b border-purple-500">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-20 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
@@ -38,8 +38,8 @@ const Navbar = () => {
                 aria-hidden="true"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                 strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                 />
               </svg>
@@ -49,7 +49,11 @@ const Navbar = () => {
           <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
             {/* <!-- Logo --> */}
             <Link className="flex flex-shrink-0 items-center" href="/">
-              <Image className="h-10 w-auto" src={logo} alt="Bear Rentals" />
+              <Image
+                className="h-10 w-auto mr-2"
+                src={logo}
+                alt="Bear Rentals"
+              />
 
               <span className="hidden md:block text-white text-2xl font-bold ml-2">
                 Bear Rentals
@@ -74,22 +78,16 @@ const Navbar = () => {
                 >
                   Properties
                 </Link>
-{ isLoggedIn && (
-
-
-
-                <Link
-                  href="/properties/add"
-                  className={`${
-                    pathname === "/properties/add" ? "bg-black" : ""
-                  } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
-                >
-                  Add Property
-                </Link>
-              )
-
-        }
-        
+                {isLoggedIn && (
+                  <Link
+                    href="/properties/add"
+                    className={`${
+                      pathname === "/properties/add" ? "bg-black" : ""
+                    } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
+                  >
+                    Add Property
+                  </Link>
+                )}
               </div>
             </div>
           </div>
@@ -124,8 +122,8 @@ const Navbar = () => {
                     aria-hidden="true"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
                     />
                   </svg>
@@ -136,6 +134,7 @@ const Navbar = () => {
                 </span>
               </Link>
               {/* <!-- Profile dropdown button --> */}
+
               <div className="relative ml-3">
                 <div>
                   <button
@@ -221,31 +220,22 @@ const Navbar = () => {
               Properties
             </Link>
 
-
-            { 
-                isLoggedIn && ( 
-
-               
-            <Link
-              href="/properties/add"
-              className={`${
-                pathname === "/properties/add" ? "bg-black" : ""
-              } text-white block rounded-md px-3 py-2 text-base font-medium`}
-            >
-              Add Property
-            </Link>
- )
-}
-            {
-                !isLoggedIn && ( 
-
-            
-            <button className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 my-5">
-              <i className="fa-brands fa-google mr-2"></i>
-              <span>Login or Register</span>
-            </button>
-                )
-            }
+            {isLoggedIn && (
+              <Link
+                href="/properties/add"
+                className={`${
+                  pathname === "/properties/add" ? "bg-black" : ""
+                } text-white block rounded-md px-3 py-2 text-base font-medium`}
+              >
+                Add Property
+              </Link>
+            )}
+            {!isLoggedIn && (
+              <button className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 my-5">
+                <i className="fa-brands fa-google mr-2"></i>
+                <span>Login or Register</span>
+              </button>
+            )}
           </div>
         </div>
       )}

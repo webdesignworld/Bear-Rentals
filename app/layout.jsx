@@ -1,8 +1,9 @@
 import "@/app/styles/globals.css"
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export const metadata = {
-  title: 'BearProperties',
+  title: 'Bear Rentals',
   description: 'Find The Impossible',
   keywords: 'rental, property, real estate, berlin',
 };
@@ -15,6 +16,7 @@ const MainLayout = ({children}) => {
         <main>
                {children}
         </main>
+        <Footer />
       </body>
     </html>
   );
