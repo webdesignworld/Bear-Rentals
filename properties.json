@@ -8,7 +8,7 @@
     "location": {
       "street": "Unter den Linden 12",
       "city": "Berlin",
-      "land": "Berlin",
+      "state": "Berlin",
       "postcode": "10117"
     },
     "beds": 2,
@@ -53,7 +53,7 @@
     "location": {
       "street": "Bahnhofstraße 45",
       "city": "Munich",
-      "land": "Bavaria",
+      "state": "Bavaria",
       "postcode": "80335"
     },
     "beds": 1,
@@ -97,7 +97,7 @@
     "location": {
       "street": "Main Tower 500",
       "city": "Frankfurt",
-      "land": "Hessen",
+      "state": "Hessen",
       "zipcode": "60329"
     },
     "beds": 3,
@@ -143,7 +143,7 @@
     "location": {
       "street": "Schwarzwaldstraße 123",
       "city": "Freiburg",
-      "land": "Baden-Württemberg",
+      "state": "Baden-Württemberg",
       "zipcode": "79098"
     },
     "beds": 1,
@@ -177,7 +177,7 @@
     "location": {
       "street": "Hafenstraße 75",
       "city": "Hamburg",
-      "land": "Hamburg",
+      "state": "Hamburg",
       "zipcode": "20457"
     },
     "beds": 1,
@@ -213,7 +213,7 @@
     "location": {
       "street": "Seestraße 456",
       "city": "Konstanz",
-      "land": "Baden-Württemberg",
+      "state": "Baden-Württemberg",
       "zipcode": "78462"
     },
     "beds": 4,
@@ -249,7 +249,7 @@
     "location": {
       "street": "Waldweg 789",
       "city": "Garmisch-Partenkirchen",
-      "land": "Bavaria",
+      "state": "Bavaria",
       "postcode": "82467"
     },
     "beds": 2,
@@ -284,7 +284,7 @@
     "location": {
       "street": "Bergstraße 321",
       "city": "Oberstdorf",
-      "land": "Bavaria",
+      "state": "Bavaria",
       "postcode": "87561"
     },
     "beds": 3,
@@ -319,7 +319,7 @@
     "location": {
       "street": "Gipfelweg 600",
       "city": "Grainau",
-      "land": "Bavaria",
+      "state": "Bavaria",
       "postcode": "82491"
     },
     "beds": 4,
@@ -355,7 +355,7 @@
     "location": {
       "street": "Historische Straße 123",
       "city": "Berlin",
-      "land": "Berlin",
+      "state": "Berlin",
       "postcode": "10117"
     },
     "beds": 2,

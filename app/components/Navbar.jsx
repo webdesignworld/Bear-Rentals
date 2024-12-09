@@ -3,13 +3,15 @@ import { useState, useEffect } from "react";
 import logo from "@/app/assets/images/logo.png";
 import Image from "next/image";
 import Link from "next/link";
+import profileDefault from "@/app/assets/images/profile.png";
 import { usePathname } from "next/navigation";
 import { FaGoogle } from "react-icons/fa";
-import { signIn, signOut, useSession, getProviders} from "next-auth/react";
+import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 const Navbar = () => {
   const { data: session } = useSession();
- 
+
+  const profileImage = session?.user?.image;
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
@@ -51,7 +53,7 @@ const Navbar = () => {
                 aria-hidden="true"
               >
                 <path
-                 strokeLinecap="round"
+                  strokeLinecap="round"
                   strokeLinejoin="round"
                   d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                 />
@@ -107,16 +109,16 @@ const Navbar = () => {
 
           {/* <!-- Right Side Menu (Logged Out) --> */}
           {!session && (
-            <div className='hidden md:block md:ml-6'>
-              <div className='flex items-center'>
+            <div className="hidden md:block md:ml-6">
+              <div className="flex items-center">
                 {providers &&
                   Object.values(providers).map((provider, index) => (
                     <button
                       key={index}
-                      onClick={ () => signIn(provider.id)}
-                      className='flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 my-3'
+                      onClick={() => signIn(provider.id)}
+                      className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 my-3"
                     >
-                      <FaGoogle className='text-white mr-2' />
+                      <FaGoogle className="text-white mr-2" />
                       <span>Login or Register</span>
                     </button>
                   ))}
@@ -170,8 +172,10 @@ const Navbar = () => {
                     <span className="sr-only">Open user menu</span>
                     <img
                       className="h-8 w-8 rounded-full"
-                      src="/images/profile.png"
-                      alt=""
+                      src={profileImage || profileDefault}
+                      alt="profile_image"
+                      width={40}
+                      height={40}
                     />
                   </button>
                 </div>
@@ -209,6 +213,10 @@ const Navbar = () => {
                       role="menuitem"
                       tabIndex="-1"
                       id="user-menu-item-2"
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        signOut();
+                      }}
                     >
                       Sign Out
                     </button>
