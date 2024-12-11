@@ -4,7 +4,7 @@ const PropertyHeaderImage = ({image}) => {
         return (   <section>
                 <div className="relative h-[400px] w-full">
     <Image
-      src={`/images/properties/${image}`}
+      src={image}
       alt="Property Image"
       className="object-cover"
       layout="fill" 
