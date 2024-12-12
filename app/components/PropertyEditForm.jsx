@@ -52,6 +52,7 @@ const PropertyEditForm = ({ property }) => {
           className="border rounded w-full py-2 px-3"
           rows="4"
           placeholder="Add an optional description of your property"
+          defaultValue={property.description}
         ></textarea>
       </div>
 
