@@ -1,13 +1,13 @@
 //this is a server component
 
 import Image from "next/image";
-import connectDB from "@/config/database";
-import Property from "@/models/Property";
-import { getSessionUser } from "@/utils/getSessionUser";
+import connectDB from "../../config/database";
+import Property from "../../models/Property";
+import { getSessionUser } from "../../utils/getSessionUser";
 import profileDefault from "../assets/images/profile.png"
 import { Edit2, Trash2 } from "lucide-react";
 import ProfileProperties from "../components/ProfileProperties";
-import { convertToSerializeableObject } from "@/utils/convertToObject";
+import { convertToSerializeableObject } from "../../utils/convertToObject";
 
 
 const ProfilePage = async () => {

@@ -1,9 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
-import logo from "@/app/assets/images/logo.png";
+import logo from "../assets/images/logo.png"
 import Image from "next/image";
 import Link from "next/link";
-import profileDefault from "@/app/assets/images/profile.png";
+import profileDefault from "../assets/images/profile.png";
 import { usePathname } from "next/navigation";
 import { FaGoogle } from "react-icons/fa";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";

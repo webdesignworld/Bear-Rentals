@@ -1,21 +1,19 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 let connected = false;
 
 const connectDB = async () => {
-  mongoose.set('strictQuery', true);
-
+  mongoose.set("strictQuery", true);
 
   if (connected) {
-    console.log('MongoDB is connected...');
+    console.log("MongoDB is connected...");
     return;
   }
-
 
   try {
     await mongoose.connect(process.env.MONGODB_URI);
     connected = true;
-    console.log('MongoDB connected...');
+    console.log("MongoDB connected...");
   } catch (error) {
     console.log(error);
   }

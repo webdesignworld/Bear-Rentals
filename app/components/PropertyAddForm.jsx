@@ -80,7 +80,7 @@ const PropertyAddForm = () => {
             name="location.state"
             className="border rounded w-full py-2 px-3 mb-2"
             placeholder="State"
-            required
+            // required
           />
           <input
             type="text"
@@ -147,12 +147,12 @@ const PropertyAddForm = () => {
             <div>
               <input
                 type="checkbox"
-                id="amenity_wifi"
+                id="amenity_wlan"
                 name="amenities"
-                value="Wifi"
+                value="WLAN"
                 className="mr-2"
               />
-              <label htmlFor="amenity_wifi">Wifi</label>
+              <label htmlFor="amenity_wlan">WLAN</label>
             </div>
             <div>
               <input
@@ -229,12 +229,12 @@ const PropertyAddForm = () => {
             <div>
               <input
                 type="checkbox"
-                id="amenity_elevator_access"
+                id="amenity_lift_access"
                 name="amenities"
-                value="Elevator Access"
+                value="Lift Access"
                 className="mr-2"
               />
-              <label htmlFor="amenity_elevator_access">Elevator Access</label>
+              <label htmlFor="amenity_lift_access">Lift Access</label>
             </div>
             <div>
               <input
@@ -297,6 +297,16 @@ const PropertyAddForm = () => {
                 className="mr-2"
               />
               <label htmlFor="amenity_coffee_maker">Coffee Maker</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="amenity_jacuzzi"
+                name="amenities"
+                value="Jacuzzi"
+                className="mr-2"
+              />
+              <label htmlFor="amenity_jacuzzi">Jacuzzi</label>
             </div>
           </div>
         </div>
