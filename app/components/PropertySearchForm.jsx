@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+
 const PropertySearchForm = () => {
   const [location, setLocation] = useState("");
   const [propertyType, setPropertyType] = useState("All");
