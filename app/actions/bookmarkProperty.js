@@ -35,7 +35,7 @@ async function bookmarkProperty(propertyId) {
   }
 
   await user.save();
-  revalidatePath("/properties/saved", "page");
+  revalidatePath("/properties/saved");
   return { message, isBookmarked };
 }
 
