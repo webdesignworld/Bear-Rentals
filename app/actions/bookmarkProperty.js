@@ -7,36 +7,56 @@ import { revalidatePath } from "next/cache";
 
 async function bookmarkProperty(propertyId) {
   await connectDB();
+
+  if (!propertyId) {
+    return { error: "Property ID is required" };
+  }
+
   const sessionUser = await getSessionUser();
 
   if (!sessionUser || !sessionUser.userId) {
-    return { error: "User ID is required" };
+    return { error: "User is not authenticated" };
   }
 
   const { userId } = sessionUser;
 
-  const user = await User.findById(userId);
+  try {
+    const user = await User.findById(userId);
 
-  let isBookmarked = user.bookmarks.includes(propertyId);
-//   console.log(isBookmarked);
+    if (!user) {
+      return { error: "User not found" };
+    }
 
-  let message;
+    let isBookmarked;
+    let message;
 
-  if (isBookmarked) {
-    // If already bookmarked, remove it
-    user.bookmarks.pull(propertyId);
-    message = "Bookmark removed successfully";
-    isBookmarked = false;
-  } else {
-    // If not bookmarked, add it
-    user.bookmarks.push(propertyId);
-    message = "Bookmark added successfully";
-    isBookmarked = true;
+    // Check if property is already bookmarked
+    if (user.bookmarks.includes(propertyId)) {
+      // If bookmarked, remove it
+      user.bookmarks.pull(propertyId);
+      message = "Bookmark removed successfully";
+      isBookmarked = false;
+    } else {
+      // If not bookmarked, add it
+      user.bookmarks.push(propertyId);
+      message = "Bookmark added successfully";
+      isBookmarked = true;
+    }
+
+    // Save the updated user document
+    await user.save();
+
+    // Revalidate the saved properties page
+    revalidatePath("/properties/saved");
+
+    return {
+      message,
+      isBookmarked,
+    };
+  } catch (error) {
+    console.error("Error updating bookmarks:", error);
+    return { error: "An error occurred while updating bookmarks" };
   }
-
-  await user.save();
-  revalidatePath("/properties/saved");
-  return { message, isBookmarked };
 }
 
 export default bookmarkProperty;

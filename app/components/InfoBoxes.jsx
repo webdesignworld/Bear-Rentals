@@ -11,7 +11,7 @@ const InfoBoxes = () => {
             buttonInfo={{
               text: 'Browse Properties',
               link: '/properties',
-              backgroundColor: 'bg-black',
+              backgroundColor: 'bg-purple-500',
             }}
           >
             Find your dream rental property. Bookmark properties and contact
@@ -21,9 +21,9 @@ const InfoBoxes = () => {
             heading='For Property Owners'
             backgroundColor='bg-purple-200'
             buttonInfo={{
-              text: 'Add Property',
+              text: 'Add Your Property',
               link: '/properties/add',
-              backgroundColor: 'bg-black',
+              backgroundColor: 'bg-purple-500',
             }}
           >
             List your properties and reach potential tenants. 

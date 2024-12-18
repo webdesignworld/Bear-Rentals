@@ -9,7 +9,7 @@ export const authOptions = {
             clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
             authorization: {
-              params: {
+              params: { //so we dont chose the last google account that was used in the app
                 prompt: 'consent',
                 access_type: 'offline',
                 response_type: 'code',
@@ -18,7 +18,7 @@ export const authOptions = {
           }),
         ],
         callbacks: {
-                // Invoked on successful signin
+                // Invoked on successful signin (profile consists of email , username , image )
                 async signIn({ profile }) {
                   // 1. Connect to database
                   await connectDB();

@@ -11,6 +11,8 @@ async function addProperty(formData) {
 
   const sessionUser = await getSessionUser();
 
+
+  //created a page for the error (custom)
   if (!sessionUser || !sessionUser.userId) {
     throw new Error("User ID is required");
   }
@@ -72,6 +74,8 @@ async function addProperty(formData) {
 
   // console.log(propertyData);
 
+
+  //from the property model
   const newProperty = new Property(propertyData);
   await newProperty.save();
 

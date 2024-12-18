@@ -83,16 +83,16 @@ const Navbar = () => {
                 <Link
                   href="/"
                   className={`${
-                    pathname === "/" ? "bg-black" : ""
-                  } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
+                    pathname === "/" ? "bg-sky-400" : ""
+                  } text-white hover:bg-sky-500 hover:text-white rounded-md px-3 py-2`}
                 >
                   Home
                 </Link>
                 <Link
                   href="/properties"
                   className={`${
-                    pathname === "/properties" ? "bg-black" : ""
-                  } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
+                    pathname === "/properties" ? "bg-sky-400" : ""
+                  } text-white hover:bg-sky-500 hover:text-white rounded-md px-3 py-2`}
                 >
                   Properties
                 </Link>
@@ -100,8 +100,8 @@ const Navbar = () => {
                   <Link
                     href="/properties/add"
                     className={`${
-                      pathname === "/properties/add" ? "bg-black" : ""
-                    } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
+                      pathname === "/properties/add" ? "bg-sky-400" : ""
+                    } text-white hover:bg-sky-500 hover:text-white rounded-md px-3 py-2`}
                   >
                     Add Property
                   </Link>
@@ -241,7 +241,7 @@ const Navbar = () => {
             <Link
               href="/"
               className={`${
-                pathname === "/" ? "bg-black" : ""
+                pathname === "/" ? "bg-sky-400" : ""
               } text-white block rounded-md px-3 py-2 text-base font-medium`}
             >
               Home
@@ -249,7 +249,7 @@ const Navbar = () => {
             <Link
               href="/properties"
               className={`${
-                pathname === "/properties" ? "bg-black" : ""
+                pathname === "/properties" ? "bg-sky-400" : ""
               } text-white block rounded-md px-3 py-2 text-base font-medium`}
             >
               Properties

@@ -7,7 +7,7 @@ export const GET = async () => {
 try{ 
 await connectDB();
 
-const properties = await Property.find({});
+const properties = await Property.find({}).lean();
 
        return new Response(properties, {
             status: 200,

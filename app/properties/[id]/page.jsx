@@ -8,16 +8,17 @@ import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
 import BookmarkButton from "../../components/BookmarkButton"
 import PropertyContactForm from "../../components/PropertyContactForm"
+import { convertToSerializeableObject } from '../../../utils/convertToObject';
 
 
-
-
+// rename to properties page as it lists many properties
 const PropertyPage = async ({ params }) => {
   await connectDB();
 
   // Fetch property document
   const propertyDoc = await Property.findById(params.id).lean();
-
+  const property = convertToSerializeableObject(propertyDoc);
+  
   // Handle invalid property or errors
   if (!propertyDoc) {
     return (
@@ -54,7 +55,7 @@ const PropertyPage = async ({ params }) => {
             <aside className='space-y-4'>
 
 <BookmarkButton/>
-<PropertyContactForm/>
+<PropertyContactForm property={propertyDoc}/>
 
             </aside>
           </div>

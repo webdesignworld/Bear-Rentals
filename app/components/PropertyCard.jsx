@@ -55,11 +55,11 @@ const PropertyCard = ({ property }) => {
           </p>
         </div>
 
-        <div className="flex justify-center gap-4 text-green-900 text-sm mb-4">
-          <p>
+        <div className="flex justify-center gap-4 text-gray-500 text-sm mb-4">
+          <p className="flex items-center">
             <FaEuroSign className="mr-2" /> Weekly
           </p>
-          <p>
+          <p className="flex items-center">
             <FaEuroSign className="mr-2" /> Monthly
           </p>
         </div>
@@ -75,7 +75,7 @@ const PropertyCard = ({ property }) => {
           </div>
           <Link
             href={`/properties/${property._id}`}
-            className="h-[36px] bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-center text-sm"
+            className="h-[36px] bg-sky-400 hover:bg-sky-500 text-white px-4 py-2 rounded-lg text-center text-sm"
           >
             Details
           </Link>

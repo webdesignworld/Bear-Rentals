@@ -1,19 +1,44 @@
+
 import connectDB from "@/config/database";
 import Property from "@/models/Property";
 
 export const GET = async (request, { params }) => {
   try {
+    // Connect to the database
     await connectDB();
 
-    const property = await Property.findById(params.id);
+    // Fetch the property by ID
+    const property = await Property.findById(params.id).lean();
 
-    if (!property) return new Response("Propety not found", { status: 404 });
+    // Handle property not found
+    if (!property) {
+      return new Response(
+        JSON.stringify({ message: "Property not found" }),
+        {
+          status: 404,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+    }
 
-    return new Response(property, {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
-    });
+    // Return property details as JSON
+    return new Response(
+      JSON.stringify(property), // Ensure the response is serialized to JSON
+      {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   } catch (error) {
-    return new Response("Something went wrong", { status: 500 });
+    console.error("Error fetching property:", error);
+
+    // Return generic error message
+    return new Response(
+      JSON.stringify({ message: "Something went wrong" }),
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   }
 };

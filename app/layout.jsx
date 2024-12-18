@@ -9,7 +9,7 @@ import { ThemeProvider } from "./components/providers/ThemeProvider";
 export const metadata = {
   title: 'Bear Rentals',
   description: 'Find The Impossible',
-  keywords: 'rental, property, real estate, berlin',
+  keywords: 'rental, property, real estate, berlin, germany',
 };
 
 const MainLayout = ({children}) => {
