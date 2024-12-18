@@ -1,40 +1,40 @@
-// 'use server';
-// import connectDB from '../../config/database';
-// import Message from '../../models/Message';
-// import Property from '../../models/Property';
-// import { getSessionUser } from '../../utils/getSessionUser';
-// import User from '../../models/User';
+'use server';
+import connectDB from "../../config/database";
+import Message from "../../models/Message";
+import { getSessionUser } from "../../utils/getSessionUser";
 
+import { revalidatePath } from 'next/cache';
 
-// async function addMessage( formData) {
-//   await connectDB();
+async function addMessage(previousState, formData) {
+  await connectDB();
 
-//   const sessionUser = await getSessionUser();
+  const sessionUser = await getSessionUser();
 
-//   if (!sessionUser || !sessionUser.userId) {
-//     return { error: 'You must be logged in to send a message' };
-//   }
+  if (!sessionUser || !sessionUser.user) {
+    return { error: 'You must be logged in to send a message' };
+  }
 
-//   const { userId } = sessionUser;
+  const { user } = sessionUser;
 
-//   if (userId === recipient) {
-//     return { error: 'You can not send a message to yourself' };
-//   }
+  const recipient = formData.get('recipient');
 
-//   const newMessage = new Message ({
-//     sender: userId,
-//     recipient,
-//     propertyId: formData.get('property'),
-//     name: formData.get('name'),
-//     email: formData.get('email'),
-//     phone: formData.get('phone'),
-//     body: formData.get('message'),
-//   });
+  if (user.id === recipient) {
+    return { error: 'You can not send a message to yourself' };
+  }
 
-//   // Use create instead of save
-//   await newMessage.create();
+  const newMessage = new Message({
+    sender: user.id,
+    recipient,
+    property: formData.get('property'),
+    name: formData.get('name'),
+    email: formData.get('email'),
+    phone: formData.get('phone'),
+    body: formData.get('message'),
+  });
 
-//   return { submitted: true };
-// }
+  await newMessage.save();
 
-// export default addMessage;
+  return { submitted: true };
+}
+
+export default addMessage;

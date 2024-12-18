@@ -26,7 +26,7 @@ if (user.id === recipient ) {
 }
 
 const newMessage = newMessage ({
-        sender: user.Id,
+        sender: userId,
         recipient, 
         property, 
         name,

@@ -13,6 +13,7 @@ import { convertToSerializeableObject } from '../../../utils/convertToObject';
 
 // rename to properties page as it lists many properties
 const PropertyPage = async ({ params }) => {
+  const { id } = await params
   await connectDB();
 
   // Fetch property document
