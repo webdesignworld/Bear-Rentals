@@ -4,8 +4,8 @@ import {useState} from "react";
 import { toast } from "react-toastify";
 import markMessageAsRead from "../actions/markMessageAsRead"
 import deleteMessage from "../actions/deleteMessage"
-
-
+import { Trash2} from "lucide-react";
+import { Eye, EyeOff } from 'lucide-react';
 
 
 const MessageCard = ({ message }) => {
@@ -35,7 +35,7 @@ const MessageCard = ({ message }) => {
   return (
     <div className="relative bg-white p-4 rounded-md shadow-md border border-gray-200">
           {!isRead && (
-        <div className='absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded-md'>
+        <div className='absolute top-2 right-2 bg-purple-500 hover:bg-purple-600 text-white px-2 py-1 rounded-md'>
           New
         </div>
       )}
@@ -65,14 +65,30 @@ const MessageCard = ({ message }) => {
 
       <button 
          onClick={handleReadClick}
-      className="mt-4 mr-3 bg-purple-500 text-white py-1 px-3 rounded-md">
-      {isRead ? 'Mark As New' : 'Mark As Read'}
+      className="mt-4 mr-3 bg-green-500 hover:bg-green-700 text-white py-1 px-3 rounded-md">
+{isRead ? (
+    <>
+      <EyeOff size={20} className="mr-2" />
+      Mark As New
+    </>
+  ) : (
+    <>
+      <Eye size={20} className="mr-2" />
+      Mark As Read
+    </>
+  )}
+
+
+      {/* {isRead ? 'Mark As New' : 'Mark As Read'} */}
       </button>
 
       <button 
           onClick={handleDeleteClick}
-      className="mt-4 mr-3 bg-purple-500 text-white py-1 px-3 rounded-md">
-        Mark as Delete
+          className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 mt-4 mr-3 rounded-md ">
+       
+        <Trash2 size={20} className="mr-2" />
+      Mark as Delete
+      
       </button>
     </div>
   );

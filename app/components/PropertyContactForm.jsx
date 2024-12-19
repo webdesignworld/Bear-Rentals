@@ -5,7 +5,7 @@ import { useSession } from "next-auth/react"; // For managing user session
 import { toast } from "react-toastify"; // Notification library
 
 import addMessage from "../actions/addMessage"; // Server action
-import SubmitMessageButton from "./SumbitMessageButton";
+import SubmitMessageButton from "./SubmitMessageButton";
 
 const PropertyContactForm = ({ property }) => {
   const { data: session } = useSession();

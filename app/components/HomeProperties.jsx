@@ -15,7 +15,7 @@ await connectDB();
 
         return (          
         <>
-        <section className="px-4 py-6">
+        <section className="px-4 py-6 ">
                 <div className="container-xl lg:container m-auto px-4 py-6">
                         <h2 className="text-3xl text-center font-bold text-black-500 mb-6">Recent Properties</h2>
                  

@@ -6,7 +6,7 @@ import PropertyDetails from "../../components/PropertyDetails";
 import PropertyImages from "../../components/PropertyImages";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
-import BookmarkButton from "../../components/BookmarkButton"
+
 import PropertyContactForm from "../../components/PropertyContactForm"
 import { convertToSerializeableObject } from '../../../utils/convertToObject';
 
@@ -55,7 +55,7 @@ const PropertyPage = async ({ params }) => {
             <PropertyDetails property={propertyDoc} />
             <aside className='space-y-4'>
 
-<BookmarkButton/>
+
 <PropertyContactForm property={propertyDoc}/>
 
             </aside>
