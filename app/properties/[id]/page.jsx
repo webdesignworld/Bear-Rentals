@@ -23,7 +23,7 @@ const PropertyPage = async ({ params }) => {
   // Handle invalid property or errors
   if (!propertyDoc) {
     return (
-      <div className="container m-auto py-10 px-6 text-center">
+      <div className="container m-auto py-10 px-6 text-center dark:bg-black">
         <p className="text-red-500 text-lg">Property not found.</p>
         <Link
           href="/"
@@ -39,17 +39,17 @@ const PropertyPage = async ({ params }) => {
   return (
     <>
       <PropertyHeaderImage image={propertyDoc.images[0]} />
-      <section>
-        <div className="container m-auto py-6 px-6">
+      <section className="dark:bg-black">
+        <div className="container m-auto py-6 px-6 dark:bg-black">
           <Link
             href="/"
-            className="text-blue-500 hover:text-blue-600 flex items-center"
+            className="text-purple-500 hover:text-purple-600 flex items-center"
           >
             <FaArrowLeft className="mr-2" /> Back to Properties
           </Link>
         </div>
       </section>
-      <section className="bg-blue-50">
+      <section className="bg-purple-50 dark:bg-black">
         <div className="container m-auto py-10 px-6">
           <div className="grid grid-cols-1 md:grid-cols-70/30 w-full gap-6">
             <PropertyDetails property={propertyDoc} />

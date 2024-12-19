@@ -28,7 +28,7 @@ const PropertyContactForm = ({ property }) => {
   return (
     session && (
       <div className="bg-white p-6 rounded-lg shadow-md">
-        <h3 className="text-xl font-bold mb-6">Contact Property Manager</h3>
+        <h3 className="text-xl font-bold mb-6 dark:text-gray-500">Contact Property Manager</h3>
         <form action={formAction}>
           <input
             type="hidden"
@@ -50,7 +50,7 @@ const PropertyContactForm = ({ property }) => {
               Name:
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-white"
               id="name"
               name="name"
               type="text"
@@ -66,7 +66,7 @@ const PropertyContactForm = ({ property }) => {
               Email:
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-white"
               id="email"
               name="email"
               type="email"
@@ -82,7 +82,7 @@ const PropertyContactForm = ({ property }) => {
               Phone:
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-white"
               id="phone"
               name="phone"
               type="text"
@@ -97,7 +97,7 @@ const PropertyContactForm = ({ property }) => {
               Message:
             </label>
             <textarea
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 h-44 focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 h-44 focus:outline-none focus:shadow-outline dark:bg-white"
               id="message"
               name="message"
               placeholder="Enter your message"

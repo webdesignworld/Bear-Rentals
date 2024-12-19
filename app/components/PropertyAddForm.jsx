@@ -419,7 +419,7 @@ const PropertyAddForm = () => {
 
         <div>
           <button
-            className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
+          className="bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-purple-700 text-white font-bold py-2 px-6 rounded-full w-full focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-50 flex items-center justify-center shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105"
             type="submit"
           >
             Add Property
