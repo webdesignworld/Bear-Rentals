@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Trash2 } from "lucide-react";
+import { Trash2, Edit2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import deleteProperty from "../actions/deleteProperty";
@@ -50,8 +50,9 @@ const ProfileProperties = ({ properties: initialProperties }) => {
           <div className="mt-2 flex items-center">
             <Link
               href={`/properties/${property._id}/edit`}
-              className="bg-purple-500 text-white px-3 py-2 rounded-md mr-2 hover:bg-purple-600"
+              className="bg-purple-500  text-white py-2 px-4 text-xs rounded-md mr-2 hover:bg-purple-600 flex items-center"
             >
+              <Edit2 size={20} className="mr-2" />
               Edit
             </Link>
             <button

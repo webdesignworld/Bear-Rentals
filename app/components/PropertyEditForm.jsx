@@ -1,5 +1,5 @@
 import updateProperty from "../actions/updateProperty";
-
+import { Edit2, Trash2 } from "lucide-react";
 
 
 
@@ -7,7 +7,7 @@ const PropertyEditForm = ({ property }) => {
   const updatePropertyById = updateProperty.bind(null, property._id);
   return (
     <form action={updatePropertyById}>
-      <h2 className="text-3xl text-center font-semibold mb-6 text-red-500">
+      <h2 className="text-3xl text-center font-semibold mb-6 text-red-500"><Edit2 size={16} />
         Edit Property
       </h2>
 
@@ -18,7 +18,7 @@ const PropertyEditForm = ({ property }) => {
         <select
           id="type"
           name="type"
-          className="border rounded w-full py-2 px-3"
+          className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
           defaultValue={property.type}
           required
         >
@@ -39,7 +39,7 @@ const PropertyEditForm = ({ property }) => {
           type="text"
           id="name"
           name="name"
-          className="border rounded w-full py-2 px-3 mb-2"
+          className="border rounded w-full py-2 px-3 mb-2 dark:bg-white dark:text-black"
           placeholder="eg. Beautiful House In the Apls"
           defaultValue={property.name}
           required
@@ -55,20 +55,20 @@ const PropertyEditForm = ({ property }) => {
         <textarea
           id="description"
           name="description"
-          className="border rounded w-full py-2 px-3"
+          className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
           rows="4"
           placeholder="Add an optional description of your property"
           defaultValue={property.description}
         ></textarea>
       </div>
 
-      <div className="mb-4 bg-purple-50 p-4">
+      <div className="mb-4 bg-white p-4">
         <label className="block text-gray-700 font-bold mb-2">Location</label>
         <input
           type="text"
           id="street"
           name="location.street"
-          className="border rounded w-full py-2 px-3 mb-2"
+          className="border rounded w-full py-2 px-3 mb-2 dark:bg-white dark:text-black"
           placeholder="Street"
           defaultValue={property.location.street}
         />
@@ -76,7 +76,7 @@ const PropertyEditForm = ({ property }) => {
           type="text"
           id="city"
           name="location.city"
-          className="border rounded w-full py-2 px-3 mb-2"
+          className="border rounded w-full py-2 px-3 mb-2 dark:bg-white dark:text-black"
           placeholder="City"
           required
           defaultValue={property.location.city}
@@ -85,7 +85,7 @@ const PropertyEditForm = ({ property }) => {
           type="text"
           id="state"
           name="location.state"
-          className="border rounded w-full py-2 px-3 mb-2"
+          className="border rounded w-full py-2 px-3 mb-2 dark:bg-white dark:text-black"
           placeholder="State"
           required
           defaultValue={property.location.state}
@@ -94,7 +94,7 @@ const PropertyEditForm = ({ property }) => {
           type="text"
           id="postcode"
           name="location.postcode"
-          className="border rounded w-full py-2 px-3 mb-2"
+          className="border rounded w-full py-2 px-3 mb-2 dark:bg-white dark:text-black"
           placeholder="Postcode"
           defaultValue={property.location.postcode}
         />
@@ -109,7 +109,7 @@ const PropertyEditForm = ({ property }) => {
             type="number"
             id="beds"
             name="beds"
-            className="border rounded w-full py-2 px-3"
+            className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
             required
             defaultValue={property.beds}
           />
@@ -122,7 +122,7 @@ const PropertyEditForm = ({ property }) => {
             type="number"
             id="baths"
             name="baths"
-            className="border rounded w-full py-2 px-3"
+            className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
             required
             defaultValue={property.baths}
           />
@@ -138,7 +138,7 @@ const PropertyEditForm = ({ property }) => {
             type="number"
             id="square_meters"
             name="square_meters"
-            className="border rounded w-full py-2 px-3"
+            className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
             required
             defaultValue={property.square_meters}
           />
@@ -147,14 +147,14 @@ const PropertyEditForm = ({ property }) => {
 
       <div className="mb-4">
         <label className="block text-gray-700 font-bold mb-2">Amenities</label>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 dark:bg-white dark:text-black">
           <div>
             <input
               type="checkbox"
               id="amenity_wlan"
               name="amenities"
               value="WLAN"
-              className="mr-2"
+              className="mr-2 dark:bg-white dark:text-black"
               defaultChecked={property.amenities.includes("WLAN")}
             />
             <label htmlFor="amenity_wlan">WLAN</label>
@@ -165,7 +165,7 @@ const PropertyEditForm = ({ property }) => {
               id="amenity_kitchen"
               name="amenities"
               value="Full kitchen"
-              className="mr-2"
+              className="mr-2 "
               defaultChecked={property.amenities.includes("Full kitchen")}
             />
             <label htmlFor="amenity_kitchen">Full kitchen</label>
@@ -337,38 +337,38 @@ const PropertyEditForm = ({ property }) => {
         </label>
         <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
           <div className="flex items-center">
-            <label htmlFor="weekly_rate" className="mr-2">
+            <label htmlFor="weekly_rate" className="mr-2 dark:bg-white dark:text-black">
               Weekly
             </label>
             <input
               type="number"
               id="weekly_rate"
               name="rates.weekly"
-              className="border rounded w-full py-2 px-3"
+              className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
               defaultValue={property.rates.weekly}
             />
           </div>
           <div className="flex items-center">
-            <label htmlFor="monthly_rate" className="mr-2">
+            <label htmlFor="monthly_rate" className="mr-2 dark:bg-white dark:text-black">
               Monthly
             </label>
             <input
               type="number"
               id="monthly_rate"
               name="rates.monthly"
-              className="border rounded w-full py-2 px-3"
+              className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
               defaultValue={property.rates.monthly}
             />
           </div>
           <div className="flex items-center">
-            <label htmlFor="nightly_rate" className="mr-2">
+            <label htmlFor="nightly_rate" className="mr-2 dark:bg-white dark:text-black">
               Nightly
             </label>
             <input
               type="number"
               id="nightly_rate"
               name="rates.nightly"
-              className="border rounded w-full py-2 px-3"
+              className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
               defaultValue={property.rates.nightly}
             />
           </div>
@@ -386,7 +386,7 @@ const PropertyEditForm = ({ property }) => {
           type="text"
           id="seller_name"
           name="seller_info.name"
-          className="border rounded w-full py-2 px-3"
+          className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
           defaultValue={property.seller_info.name}
           placeholder="Full Name"
         />
@@ -402,7 +402,7 @@ const PropertyEditForm = ({ property }) => {
           type="email"
           id="seller_email"
           name="seller_info.email"
-          className="border rounded w-full py-2 px-3"
+          className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
           placeholder="Email address"
           required
           defaultValue={property.seller_info.email}
@@ -419,7 +419,7 @@ const PropertyEditForm = ({ property }) => {
           type="tel"
           id="seller_phone"
           name="seller_info.phone"
-          className="border rounded w-full py-2 px-3"
+          className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
           placeholder="Phone"
           defaultValue={property.seller_info.phone}
         />
@@ -442,10 +442,10 @@ const PropertyEditForm = ({ property }) => {
 
       <div>
         <button
-          className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
+          className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
           type="submit"
         >
-          Update Property
+          Update Property 
         </button>
       </div>
     </form>

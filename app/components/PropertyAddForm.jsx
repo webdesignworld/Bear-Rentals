@@ -1,11 +1,11 @@
 import addProperty from "../actions/addProperty";
-
+import { Plus } from 'lucide-react';
 
 const PropertyAddForm = () => {
   return (
     <>
       <form action={addProperty}>
-        <h2 className="text-3xl text-center font-semibold mb-6">
+        <h2 className="text-3xl text-center text-purple-600 font-semibold mb-6 dark:text-black">   <Plus  />
           Add Property
         </h2>
 
@@ -16,7 +16,7 @@ const PropertyAddForm = () => {
           <select
             id="type"
             name="type"
-            className="border rounded w-full py-2 px-3"
+            className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
             required
           >
             <option value="Flat or Apartment">Flat or Apartment</option>
@@ -36,7 +36,7 @@ const PropertyAddForm = () => {
             type="text"
             id="name"
             name="name"
-            className="border rounded w-full py-2 px-3 mb-2"
+            className="border rounded w-full py-2 px-3 mb-2 dark:bg-white dark:text-black"
             placeholder="eg. Beautiful House In the Apls"
             required
           />
@@ -51,7 +51,7 @@ const PropertyAddForm = () => {
           <textarea
             id="description"
             name="description"
-            className="border rounded w-full py-2 px-3"
+            className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
             rows="4"
             placeholder="Add an optional description of your property"
           ></textarea>
@@ -63,14 +63,14 @@ const PropertyAddForm = () => {
             type="text"
             id="street"
             name="location.street"
-            className="border rounded w-full py-2 px-3 mb-2"
+            className="border rounded w-full py-2 px-3 mb-2 dark:bg-white dark:text-black"
             placeholder="Street"
           />
           <input
             type="text"
             id="city"
             name="location.city"
-            className="border rounded w-full py-2 px-3 mb-2"
+            className="border rounded w-full py-2 px-3 mb-2 dark:bg-white dark:text-black"
             placeholder="City"
             required
           />
@@ -78,7 +78,7 @@ const PropertyAddForm = () => {
             type="text"
             id="state"
             name="location.state"
-            className="border rounded w-full py-2 px-3 mb-2"
+            className="border rounded w-full py-2 px-3 mb-2 dark:bg-white dark:text-black"
             placeholder="State"
             // required
           />
@@ -86,7 +86,7 @@ const PropertyAddForm = () => {
             type="text"
             id="postcode"
             name="location.postcode"
-            className="border rounded w-full py-2 px-3 mb-2"
+            className="border rounded w-full py-2 px-3 mb-2 dark:bg-white dark:text-black"
             placeholder="Postcode"
           />
         </div>
@@ -103,7 +103,7 @@ const PropertyAddForm = () => {
               type="number"
               id="beds"
               name="beds"
-              className="border rounded w-full py-2 px-3"
+              className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
               required
             />
           </div>
@@ -118,7 +118,7 @@ const PropertyAddForm = () => {
               type="number"
               id="baths"
               name="baths"
-              className="border rounded w-full py-2 px-3"
+              className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
               required
             />
           </div>
@@ -133,7 +133,7 @@ const PropertyAddForm = () => {
               type="number"
               id="square_meters"
               name="square_meters"
-              className="border rounded w-full py-2 px-3"
+              className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
               required
             />
           </div>
@@ -143,7 +143,7 @@ const PropertyAddForm = () => {
           <label className="block text-gray-700 font-bold mb-2">
             Amenities
           </label>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 dark:bg-white dark:text-black">
             <div>
               <input
                 type="checkbox"
@@ -317,36 +317,36 @@ const PropertyAddForm = () => {
           </label>
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
             <div className="flex items-center">
-              <label htmlFor="weekly_rate" className="mr-2">
+              <label htmlFor="weekly_rate" className="mr-2 dark:bg-white dark:text-black">
                 Weekly
               </label>
               <input
                 type="number"
                 id="weekly_rate"
                 name="rates.weekly"
-                className="border rounded w-full py-2 px-3"
+                className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
               />
             </div>
             <div className="flex items-center">
-              <label htmlFor="monthly_rate" className="mr-2">
+              <label htmlFor="monthly_rate" className="mr-2 dark:bg-white dark:text-black">
                 Monthly
               </label>
               <input
                 type="number"
                 id="monthly_rate"
                 name="rates.monthly"
-                className="border rounded w-full py-2 px-3"
+                className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
               />
             </div>
             <div className="flex items-center">
-              <label htmlFor="nightly_rate" className="mr-2">
+              <label htmlFor="nightly_rate" className="mr-2 dark:bg-white dark:text-black">
                 Nightly
               </label>
               <input
                 type="number"
                 id="nightly_rate"
                 name="rates.nightly"
-                className="border rounded w-full py-2 px-3"
+                className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
               />
             </div>
           </div>
@@ -363,7 +363,7 @@ const PropertyAddForm = () => {
             type="text"
             id="seller_name"
             name="seller_info.name"
-            className="border rounded w-full py-2 px-3"
+            className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
             placeholder="Name"
           />
         </div>
@@ -378,7 +378,7 @@ const PropertyAddForm = () => {
             type="email"
             id="seller_email"
             name="seller_info.email"
-            className="border rounded w-full py-2 px-3"
+            className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
             placeholder="Email address"
             required
           />
@@ -394,7 +394,7 @@ const PropertyAddForm = () => {
             type="tel"
             id="seller_phone"
             name="seller_info.phone"
-            className="border rounded w-full py-2 px-3"
+            className="border rounded w-full py-2 px-3 dark:bg-white dark:text-black"
             placeholder="Phone"
           />
         </div>
