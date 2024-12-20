@@ -7,7 +7,7 @@ import Property from "../../models/Property";
 const HomeProperties = async () => {
 await connectDB();
 
-//use property model to fetch from DB (fetch latest newest first, limit to three and lean for performance)
+// use property model to fetch from DB (fetch latest newest first, limit to three and lean for performance)
         const recentProperties = await Property.find({}).lean()
         .sort({createdAt: -1})
         .limit(3)
@@ -31,9 +31,11 @@ await connectDB();
                   )}
                 </div>
               </section>
-              
 
-              {/* to load more properties when you click on the link button, sends to properties page  */}
+            
+              
+             {/* //  to load more properties when you click on the link button, sends to properties page */}
+        
               <section className="m-auto max-w-lg my-6 px-6">
 
 <Link href="/properties" className="block bg-sky-400 text-white text-center py-4 px-6 rounded-xl hover:bg-sky-500">View All Properties</Link>
